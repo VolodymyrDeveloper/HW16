@@ -1,6 +1,7 @@
 class MyThread extends Thread {
+
     private String name;
-    private static int counter= 1;
+    private static int counter = 1;
     private Board board;
 
     public MyThread(String name, Board board) {
@@ -15,7 +16,7 @@ class MyThread extends Thread {
                 this.board.notify();
                 System.out.println(name + "-" + counter++);
                 try {
-                    if (i==9)
+                    if (i == 9)
                         break;
                     this.board.wait();
                 } catch (InterruptedException e) {
